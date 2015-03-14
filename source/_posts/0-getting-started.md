@@ -5,12 +5,20 @@ tags:
 
 ## 安装 Rails
 
-Windows 下使用 [RailsInstaller](http://railsinstaller.org/en)，安装完成后便有一个完整的 Rails 开发环境。
-Rails 版本： `4.2.0`
+如果是在 Windows 环境下开发，安装 [RailsInstaller](http://railsinstaller.org/en)。
+Get to work，别折腾任何环境相关的问题。  RailsInstaller 安装完成后便有一个完整的 Rails 开发环境。
 
-> 编辑器使用 [RubyMine](https://www.jetbrains.com/ruby/)
+### 编辑器
+
+首推 [RubyMine](https://www.jetbrains.com/ruby/)。一个良好的编辑器在起步时，如果使用恰当的情况将会是一个很不错的助手。
+
+当对项目的结构有了一定的了解之后，可以考虑结合 [Atom](http://atom.io/)。智能 IDE 可以帮我们做很多事情，当熟悉之后，我们可以渐进的替换到轻量一些的编辑器上，加深对项目结构的理解。
+
+Get to work，别折腾任何编辑器相关的问题。
+
 
 <!--more-->
+
 
 ## 新建 Rails 应用
 
