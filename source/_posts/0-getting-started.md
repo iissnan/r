@@ -78,9 +78,9 @@ $ bin/rspec spec/models
 ```
 
 
-## 启动服务器
+## Hello, Rails
 
-Rails 自带一个脚本，用于启动本地服务器，方便开发工作。这个命令是：
+Rails 自带一个脚本，用于启动本地服务器 WEBrick，方便开发工作。这个命令是：
 
 ```
 $ rails server
@@ -94,5 +94,3 @@ $ rails server -b <ip> -p <port>
 
 在浏览器中输入 `http://<ip>:<port>` 即可访问 Rails 应用本地服务器。
 使用 `ctrl + c` 来终止此本地服务器。
-
-## Hello, Rails
