@@ -1,0 +1,502 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-compact">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.3.0"/>
+
+
+    <meta name="description" content="无废话流 Rails 入门" />
+
+
+
+
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.3.0" />
+
+
+
+
+  <title> 归档 // Rails 小书 </title>
+</head>
+
+<body>
+  <div class="container one-column  page-archive ">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Rails 小书</span>
+  </a>
+  <span class="logo-line-after"></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+
+  <span class="archive-move-on"></span>
+
+  <span class="archive-page-counter">
+    
+    
+     
+    
+    嗯..! 目前共计 1 篇日志。 继续努力。
+  </span>
+
+  
+
+    
+    
+    
+
+    
+      
+      <div class="collection-title">
+        <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
+      </div>
+    
+    
+
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Rails 开发起步
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            发表于 2015-03-01
+          
+        </span>
+        
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <h2 id="安装_Rails">安装 Rails</h2><p>如果是在 Windows 环境下开发，安装 <a href="http://railsinstaller.org/en" target="_blank" rel="external">RailsInstaller</a>。<br>Get to work，别折腾任何环境相关的问题。  RailsInstaller 安装完成后便有一个完整的 Rails 开发环境。</p>
+<h3 id="编辑器">编辑器</h3><p>首推 <a href="https://www.jetbrains.com/ruby/" target="_blank" rel="external">RubyMine</a>。一个良好的编辑器在起步时，如果使用恰当的情况将会是一个很不错的助手。</p>
+<p>当对项目的结构有了一定的了解之后，可以考虑结合 <a href="http://atom.io/" target="_blank" rel="external">Atom</a>。智能 IDE 可以帮我们做很多事情，当熟悉之后，我们可以渐进的替换到轻量一些的编辑器上，加深对项目结构的理解。</p>
+<p>Get to work，别折腾任何编辑器相关的问题。</p>
+<a id="more"></a>
+<h2 id="新建_Rails_应用">新建 Rails 应用</h2><p>执行命令：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rails <span class="keyword">new</span> &lt;name&gt;</span><br></pre></td></tr></table></figure>
+<p>其中 <code>name</code> 为应用的名称，例如新建 HelloRails 应用： <code>rails new HelloRails</code>。</p>
+<blockquote>
+<p>执行 <code>rails new -h</code> 可以查看新应用生成器的所有命令行选项。</p>
+</blockquote>
+<h2 id="Bundler">Bundler</h2><p><a href="http://bundler.io/" target="_blank" rel="external">Bundler</a> 用于安装应用所需要的依赖包（gem），保证应用所使用的包软件一致。 执行 <code>rails new</code> 的时候会自动调用 <code>bundle install</code> 来安装依赖包。之后增添依赖包到 <code>Gemfile</code> 中，需要手动执行 <code>bundle install</code> 来安装。</p>
+<h3 id="安装依赖包">安装依赖包</h3><p>应用所使用的依赖包在 <code>Gemfile</code> 中指定，并使用命令 <code>bundle install</code> 来执行安装。例如，以下的 <code>Gemfile</code> ：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Source <span class="string">'https://rubygems.org'</span></span><br><span class="line">Gem <span class="string">'nokogiri'</span></span><br><span class="line">Gem <span class="string">'rack'</span>, <span class="string">'~1.1`</span><br><span class="line">Gem '</span>rspec`, :<span class="keyword">require</span> =&gt; <span class="string">'spec'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>国内连接官方的 <code>RubyGems</code> 不太稳定，建议使用淘宝的 <a href="http://ruby.taobao.org/" target="_blank" rel="external">RubyGems</a> 镜像。</p>
+</blockquote>
+<h3 id="可执行的依赖包">可执行的依赖包</h3><p>设定完成 <code>Gemfile</code> 后即可执行以下命令来安装依赖包：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<p>如果依赖包中包含可以在命令行执行文件，需要使用 <code>bundle exec</code> 命令来调用。例如，调用 <code>rspec</code> ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle <span class="built_in">exec</span> rspec spec/models</span><br></pre></td></tr></table></figure>
+<p>在某些情况下，没有通过 <code>bundle exec</code> 来调用亦可正常执行可执行文件。但这种情况只有在系统已经安装哪个可执行文件，并且这个系统级别的可执行文件所依赖的包没有跟应用内的依赖包产生冲突。不建议采用这种方式来调用可执行文件。</p>
+<p>使用 <code>bundle exec</code> 来调用可执行 <code>gem</code> 会显得比较麻烦，所以 bundler 提供一种方式来减少这种输入。在安装依赖包的时候，加上 <code>--binstubs</code> 参数，即：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle <span class="operator"><span class="keyword">install</span> <span class="comment">--binstubs</span></span></span><br></pre></td></tr></table></figure>
+<p>通过这种方式依赖安装包，可执行的包将被安装到 <code>bin</code> 目录下，并可以通过 <code>bin/&lt;executable&gt;</code> 来调用。例如，执行 <code>rspec</code> ：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>bin/rspec spec/models</span><br></pre></td></tr></table></figure>
+<h2 id="Hello,_Rails">Hello, Rails</h2><p>Rails 自带一个脚本，用于启动本地服务器 WEBrick，方便开发工作。这个命令是：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rails <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>当启动完成后将自动在 <code>0.0.0.0:3000</code> 监听所有的 http 请求。如果需要更改端口或者 IP，则需要传入特定的参数：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rails server -<span class="tag">b</span> &lt;ip&gt; -<span class="tag">p</span> &lt;port&gt;</span><br></pre></td></tr></table></figure>
+<p>在浏览器中输入 <code>http://&lt;ip&gt;:&lt;port&gt;</code> 即可访问 Rails 应用本地服务器。<br>使用 <code>ctrl + c</code> 来终止此本地服务器。</p>
+
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          站点概览
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="/images/default_avatar.jpg" alt="IISSNAN" />
+        <p class="site-author-name">IISSNAN</p>
+      </div>
+      <p class="site-description motion-element">无废话流 Rails 入门</p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </div>
+        <div class="site-state-item site-state-tags">
+            <span class="site-state-item-count">0</span>
+            <span class="site-state-item-name">标签</span>
+        </div>
+        <div class="site-state-item site-state-pages">
+            <span class="site-state-item-count">1</span>
+            <span class="site-state-item-name">页面</span>
+        </div>
+      </div>
+
+      
+
+      <div class="social-info motion-element">
+        
+      </div>
+
+      
+      
+
+    </div>
+
+    
+      <div class="post-toc-wrap sidebar-panel-active">
+        <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <div class="post-toc">
+          
+        </div>
+        <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+      </div>
+    
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">IISSNAN</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT</a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    <script type="text/javascript">
+      postMotionOptions = {stagger: 100, drag: true};
+    </script>
+  
+
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
+
+
+  
+
+  
+  
+
+  
+
+
+  
+</body>
+</html>
