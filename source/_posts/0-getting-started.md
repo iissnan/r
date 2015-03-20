@@ -1,6 +1,7 @@
 title: "Rails 开发起步"
 date: 2015-03-02 00:27:19
 tags:
+description: 起步： 环境安装、编辑器选择、Bundler、WEBrick。
 ---
 
 ## 安装 Rails
