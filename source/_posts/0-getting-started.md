@@ -1,21 +1,19 @@
 title: "Rails 开发起步"
 date: 2015-03-02 00:27:19
 tags:
+  - Rails 基础
 description: 起步： 环境安装、编辑器选择、Bundler、WEBrick。
 ---
 
 ## 安装 Rails
 
-如果是在 Windows 环境下开发，安装 [RailsInstaller](http://railsinstaller.org/en)。
-Get to work，别折腾任何环境相关的问题。  RailsInstaller 安装完成后便有一个完整的 Rails 开发环境。
+如果是在 Windows 环境下开发，安装 [RailsInstaller](http://railsinstaller.org/en)。 Get to work，别折腾任何环境相关的问题。  RailsInstaller 安装完成后便有一个完整的 Rails 开发环境。
 
 ### 编辑器
 
-首推 [RubyMine](https://www.jetbrains.com/ruby/)。一个良好的编辑器在起步时，如果使用恰当的情况将会是一个很不错的助手。
+首推 [RubyMine](https://www.jetbrains.com/ruby/)。一个良好的编辑器在起步时，如果使用恰当的情况将会是一个很不错的助手。当对项目的结构有了一定的了解之后，可以考虑结合 [Atom](http://atom.io/)。智能 IDE 可以帮我们做很多事情，当熟悉之后，我们可以渐进的替换到轻量一些的编辑器上，加深对项目结构的理解。
 
-当对项目的结构有了一定的了解之后，可以考虑结合 [Atom](http://atom.io/)。智能 IDE 可以帮我们做很多事情，当熟悉之后，我们可以渐进的替换到轻量一些的编辑器上，加深对项目结构的理解。
-
-Get to work，别折腾任何编辑器相关的问题。
+Get to work，不要浪费时间在折腾编辑器上，这并不是首要任务。
 
 
 <!--more-->
@@ -23,13 +21,15 @@ Get to work，别折腾任何编辑器相关的问题。
 
 ## 新建 Rails 应用
 
-执行命令：
+Rails 成功安装完成之后，在命令行下就有一个 `rails` 命令。使用这个命令来创建一个 Ruby on Rails 应用：
 
 ```
-rails new <name>
+rails new <path> [options]
 ```
 
-其中 `name` 为应用的名称，例如新建 HelloRails 应用： `rails new HelloRails`。
+其中 `path` 为应用保存的路径地址，地址的最后部分将做为应用的名字。例如新建 HelloRails 应用： `rails new ~/Rails/HelloRails`。默认情况下，当创建完应用的目录结构后，此命令会继续执行 `bundle install` 来获取依赖包。由于在国内连接 [RubyGems](https://rubygems.org) 不是非常稳定，因此可以给 `rails new` 传递选项 `--skip-bundle` 告诉 rails 创建完目录结构不要执行安装依赖包，之后再进行安装。
+
+另外一个常用的选项是 `--database=`，使用此选项应用所使用的数据。未指定时，Rails 将使用 sqlite3（默认值）。
 
 > 执行 `rails new -h` 可以查看新应用生成器的所有命令行选项。
 
